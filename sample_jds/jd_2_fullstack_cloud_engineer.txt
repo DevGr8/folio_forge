@@ -1,0 +1,17 @@
+Role: Full-Stack Cloud & Distributed Systems Engineer
+Company: FinNova Cloud Pay | Location: Mumbai / Navi Mumbai
+
+About the Role:
+FinNova Cloud Pay is hiring a Full-Stack Software Engineer to architect high-throughput merchant dashboards, multi-tenant SaaS backends, and automated spreadsheet/ERP data synchronization bridges.
+
+Key Responsibilities:
+- Build responsive, accessible frontend applications using React 18, Next.js, TypeScript, and Tailwind CSS.
+- Design scalable REST and WebSocket backend microservices using Python (FastAPI) and Node.js/Express backed by PostgreSQL and Redis.
+- Optimize database query performance, implement role-based access control (RBAC), and maintain 99.9%+ production uptime on AWS (ECS/EC2/RDS).
+- Build bi-directional Google Sheets API integrations and automated CI/CD pipelines with Docker, GitHub Actions, Pytest, and Jest.
+
+Required Qualifications:
+- B.Tech in Computer Engineering or related field.
+- Strong proficiency in TypeScript, JavaScript, Python, React, Next.js, FastAPI, Node.js, and SQL (PostgreSQL).
+- Experience with AWS cloud deployment, Docker containerization, Redis caching, and automated testing.
+- AWS Developer Associate or Full-Stack professional certification preferred.

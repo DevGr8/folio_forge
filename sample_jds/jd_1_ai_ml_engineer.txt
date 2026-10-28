@@ -1,0 +1,17 @@
+Role: AI / Machine Learning Engineer (LLM & RAG Systems)
+Company: VertexScale AI Labs | Location: Mumbai / Bengaluru (Hybrid)
+
+About the Role:
+We are seeking an AI / Machine Learning Engineer to design, build, and scale enterprise Retrieval-Augmented Generation (RAG) pipelines, multi-modal document understanding workflows, and low-latency LLM inference microservices.
+
+Key Responsibilities:
+- Architect and deploy production LLM applications using Google Gemini API / Vertex AI, LangChain, and vector databases (ChromaDB / FAISS).
+- Enforce strict JSON schema validation and citation grounding to eliminate hallucinations across enterprise financial and legal document corpora.
+- Fine-tune and evaluate PyTorch and Hugging Face Transformer models for Named Entity Recognition (NER) and classification.
+- Build high-performance async Python (FastAPI) inference APIs with Redis caching and containerize services using Docker on Google Cloud Run or AWS.
+
+Required Qualifications:
+- B.Tech/B.E. in Computer Science, AI, or equivalent with strong academic foundation.
+- Hands-on experience with Python, PyTorch, Hugging Face Transformers, Google Gemini API, and RAG architectures.
+- Proven track record of optimizing inference latency and publishing or building verifiable AI/ML systems.
+- Cloud ML certification (Google Cloud MLE or DeepLearning.AI LLM specialization) is a strong plus.
