@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio Database</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#111}
+</style>
+</helmet>
+<div style="min-height: 1000px; background: #EDEDF2; color: #111; font-family: 'Space Grotesk', system-ui, sans-serif; display: flex; flex-direction: column">
+
+<header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 32px; background: #FFFFFF; border-bottom: 3px solid #111">
+<div style="display: flex; align-items: center; gap: 12px">
+<div aria-hidden="true" style="width: 40px; height: 40px; background: #2F4BFF; border: 2px solid #111; border-radius: 8px; box-shadow: 3px 3px 0 #111; display: flex; align-items: center; justify-content: center">
+<div style="width: 16px; height: 16px; background: #FFD23F; border: 2px solid #111; border-radius: 50%"></div>
+</div>
+<span style="font-size: 24px; font-weight: 700; letter-spacing: -0.5px">Folio Forge</span>
+</div>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="Main.dc.html" aria-current="page" style="text-decoration: none; background: #FFD23F; border: 2px solid #111; border-radius: 8px; padding: 10px 18px; font-weight: 700; box-shadow: 3px 3px 0 #111; min-height: 20px">Portfolio</a>
+<a href="Studio.dc.html" style="text-decoration: none; background: #FFFFFF; border: 2px solid #111; border-radius: 8px; padding: 10px 18px; font-weight: 700; min-height: 20px">Resume studio</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 2px solid #111; border-radius: 999px; padding: 8px 16px; font-family: 'Space Mono', monospace; font-size: 13px">
+<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #2F4BFF; border: 2px solid #111"></span>
+<span>Google Sheets · {{syncLabel}}</span>
+</div>
+</header>
+
+<section style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; padding: 40px 32px 8px">
+<div style="flex: 1 1 520px; max-width: 760px">
+<h1 style="margin: 0; font-size: 60px; line-height: 1.02; letter-spacing: -2px; font-weight: 700">One portfolio.<br>Every resume.</h1>
+<p style="margin: 16px 0 0; font-size: 19px; line-height: 1.5; color: #333; max-width: 600px">Keep every skill, project and award in one place. Gemini helps you tidy it, Google Sheets keeps a copy, and nothing gets added that you did not write.</p>
+</div>
+<div aria-hidden="true" style="position: relative; width: 220px; height: 150px; flex: 0 0 auto">
+<div style="position: absolute; left: 0; top: 10px; width: 100px; height: 100px; border-radius: 50%; background: #FF4B3E; border: 3px solid #111"></div>
+<div style="position: absolute; left: 70px; top: 40px; width: 100px; height: 100px; background: #2F4BFF; border: 3px solid #111"></div>
+<div style="position: absolute; left: 120px; top: 0; width: 100px; height: 100px; background: #FFD23F; clip-path: polygon(50% 0, 100% 100%, 0 100%)"></div>
+</div>
+</section>
+
+<section aria-label="Portfolio summary" style="display: flex; flex-wrap: wrap; gap: 16px; padding: 24px 32px 0">
+<div style="flex: 1 1 200px; background: #FFFFFF; border: 2px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111; padding: 16px 20px">
+<div style="font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #444">Entries</div>
+<div style="font-size: 40px; font-weight: 700; line-height: 1.1">{{total}}</div>
+</div>
+<div style="flex: 1 1 200px; background: #FFFFFF; border: 2px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111; padding: 16px 20px">
+<div style="font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #444">Categories</div>
+<div style="font-size: 40px; font-weight: 700; line-height: 1.1">10</div>
+</div>
+<div style="flex: 1 1 200px; background: #FFFFFF; border: 2px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111; padding: 16px 20px">
+<div style="font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #444">Profile complete</div>
+<div style="font-size: 40px; font-weight: 700; line-height: 1.1">86%</div>
+</div>
+<div style="flex: 1 1 200px; background: #FFD23F; border: 2px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111; padding: 16px 20px">
+<div style="font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 1px">Resumes built</div>
+<div style="font-size: 40px; font-weight: 700; line-height: 1.1">2</div>
+</div>
+</section>
+
+<main style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; padding: 24px 32px 56px">
+
+<nav aria-label="Portfolio categories" style="flex: 0 1 260px; min-width: 220px; background: #FFFFFF; border: 2px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111; padding: 12px; display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="10">
+<div>
+<sc-if value="{{c.on}}" hint-placeholder-val="{{ false }}">
+<button onClick="{{c.pick}}" aria-current="true" style="width: 100%; min-height: 44px; display: flex; justify-content: space-between; align-items: center; background: #FFD23F; border: 2px solid #111; border-radius: 8px; padding: 8px 12px; font-family: inherit; font-size: 15px; font-weight: 700; color: #111; cursor: pointer; text-align: left"><span>{{c.name}}</span><span style="font-family: 'Space Mono', monospace; font-size: 13px">{{c.count}}</span></button>
+</sc-if>
+<sc-if value="{{c.off}}" hint-placeholder-val="{{ true }}">
+<button onClick="{{c.pick}}" style="width: 100%; min-height: 44px; display: flex; justify-content: space-between; align-items: center; background: #FFFFFF; border: 2px solid transparent; border-radius: 8px; padding: 8px 12px; font-family: inherit; font-size: 15px; font-weight: 500; color: #111; cursor: pointer; text-align: left"><span>{{c.name}}</span><span style="font-family: 'Space Mono', monospace; font-size: 13px; color: #444">{{c.count}}</span></button>
+</sc-if>
+</div>
+</sc-for>
+</nav>
+
+<section aria-labelledby="entries-title" style="flex: 999 1 480px; min-width: 0; background: #FFFFFF; border: 2px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 24px; border-bottom: 2px solid #111">
+<div style="display: flex; align-items: center; gap: 12px">
+<h2 id="entries-title" style="margin: 0; font-size: 28px; letter-spacing: -0.5px">{{activeName}}</h2>
+<span style="font-family: 'Space Mono', monospace; font-size: 13px; background: #EDEDF2; border: 2px solid #111; border-radius: 999px; padding: 2px 10px">{{activeCount}}</span>
+</div>
+<button style="min-height: 44px; background: #2F4BFF; color: #FFFFFF; border: 2px solid #111; border-radius: 8px; box-shadow: 3px 3px 0 #111; padding: 10px 18px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">+ Add entry</button>
+</div>
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{items}}" as="item" hint-placeholder-count="3">
+<article style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; border-bottom: 1px solid #111">
+<div style="flex: 1 1 320px; min-width: 0">
+<h3 style="margin: 0; font-size: 19px">{{item.title}}</h3>
+<p style="margin: 6px 0 0; font-size: 15px; line-height: 1.45; color: #333">{{item.meta}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px">
+<sc-for list="{{item.tags}}" as="tag" hint-placeholder-count="2">
+<span style="font-family: 'Space Mono', monospace; font-size: 12px; background: #FFFFFF; border: 2px solid #111; border-radius: 6px; padding: 2px 8px">{{tag.t}}</span>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; gap: 8px">
+<button style="min-height: 44px; background: #FFFFFF; border: 2px solid #111; border-radius: 8px; padding: 8px 16px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Edit</button>
+<button onClick="{{item.remove}}" style="min-height: 44px; background: #FF4B3E; border: 2px solid #111; border-radius: 8px; padding: 8px 16px; font-family: inherit; font-size: 14px; font-weight: 700; color: #111; cursor: pointer">Delete</button>
+</div>
+</article>
+</sc-for>
+<sc-if value="{{empty}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 48px 24px; text-align: center">
+<div style="font-size: 22px; font-weight: 700">Nothing here yet</div>
+<p style="margin: 8px 0 0; color: #333">Add an entry or paste notes into the organizer and Gemini will sort them for you.</p>
+</div>
+</sc-if>
+</div>
+</section>
+
+<aside aria-label="Tools" style="flex: 1 1 320px; max-width: 400px; display: flex; flex-direction: column; gap: 24px">
+
+<section aria-labelledby="ai-title" style="background: #FFFFFF; border: 2px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111; padding: 20px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<h2 id="ai-title" style="margin: 0; font-size: 22px">AI organizer</h2>
+<span style="font-family: 'Space Mono', monospace; font-size: 12px; background: #FFD23F; border: 2px solid #111; border-radius: 6px; padding: 2px 8px">Gemini</span>
+</div>
+<label for="raw-notes" style="display: block; margin-top: 14px; font-size: 14px; color: #333">Paste anything: old resume text, a bio, rough notes.</label>
+<textarea id="raw-notes" rows="4" style="box-sizing: border-box; width: 100%; margin-top: 8px; border: 2px solid #111; border-radius: 8px; padding: 10px 12px; font-family: 'Space Mono', monospace; font-size: 13px; line-height: 1.5; resize: vertical">Built a budgeting web app with React and FastAPI, Jan to Apr 2025. Used PostgreSQL. Won runner-up at a college hackathon.</textarea>
+<button style="width: 100%; min-height: 44px; margin-top: 12px; background: #2F4BFF; color: #FFFFFF; border: 2px solid #111; border-radius: 8px; box-shadow: 3px 3px 0 #111; padding: 10px 16px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Organize with Gemini</button>
+<div style="margin-top: 16px; border: 2px dashed #111; border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Space Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #444">Suggested record · Projects</div>
+<div style="font-size: 14px"><strong>Title:</strong> Budgeting web app</div>
+<div style="font-size: 14px"><strong>Stack:</strong> React, FastAPI, PostgreSQL</div>
+<div style="font-size: 14px"><strong>Dates:</strong> Jan to Apr 2025</div>
+<div style="font-size: 14px; background: #FFD23F; border: 2px solid #111; border-radius: 6px; padding: 6px 10px">Missing: your role and team size. Add them yourself, they will not be guessed.</div>
+<div style="display: flex; gap: 8px">
+<button style="flex: 1; min-height: 44px; background: #FFFFFF; border: 2px solid #111; border-radius: 8px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Save</button>
+<button style="flex: 1; min-height: 44px; background: #FFFFFF; border: 2px solid #111; border-radius: 8px; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Discard</button>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="sheets-title" style="background: #FFFFFF; border: 2px solid #111; border-radius: 12px; box-shadow: 4px 4px 0 #111; padding: 20px">
+<h2 id="sheets-title" style="margin: 0; font-size: 22px">Google Sheets sync</h2>
+<p style="margin: 8px 0 0; font-size: 14px; color: #333; line-height: 1.45">Each category is its own tab, so the resume builder can read it directly.</p>
+<ul style="list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-family: 'Space Mono', monospace; font-size: 13px">
+<sc-for list="{{sheetTabs}}" as="tab" hint-placeholder-count="10">
+<li style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dotted #111"><span>{{tab.name}}</span><span>{{tab.count}} rows</span></li>
+</sc-for>
+</ul>
+<button onClick="{{sync}}" style="width: 100%; min-height: 44px; margin-top: 16px; background: #FFD23F; border: 2px solid #111; border-radius: 8px; box-shadow: 3px 3px 0 #111; padding: 10px 16px; font-family: inherit; font-size: 15px; font-weight: 700; color: #111; cursor: pointer">Sync now</button>
+<a href="Studio.dc.html" style="display: block; text-align: center; margin-top: 12px; font-weight: 700; padding: 10px; min-height: 24px">Next: build a resume →</a>
+</section>
+
+</aside>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  getData() {
+    return {
+      personal: [{ id: 'pe1', title: 'Aarav Mehta', meta: 'aarav.mehta@example.com · +91 90000 00000 · Pune, India', tags: ['LinkedIn', 'GitHub'] }],
+      summary: [{ id: 'su1', title: 'Full-stack developer', meta: 'Builds data-driven web apps with Python and React. Enjoys turning messy requirements into clean, tested features.', tags: [] }],
+      education: [{ id: 'ed1', title: 'B.Tech, Computer Science', meta: 'Sample Institute of Technology · 2021 to 2025 · CGPA 8.4', tags: [] }],
+      skills: [
+        { id: 'sk1', title: 'Python', meta: 'Technical · Advanced', tags: ['FastAPI', 'Pandas'] },
+        { id: 'sk2', title: 'JavaScript and React', meta: 'Technical · Intermediate', tags: ['Hooks', 'Vite'] },
+        { id: 'sk3', title: 'SQL', meta: 'Technical · Intermediate', tags: ['PostgreSQL', 'SQLite'] },
+        { id: 'sk4', title: 'Communication', meta: 'Soft skill', tags: [] }
+      ],
+      certs: [
+        { id: 'ce1', title: 'Cloud Fundamentals Certificate', meta: 'Sample Academy · 2024', tags: ['Cloud'] },
+        { id: 'ce2', title: 'Data Analysis with Python', meta: 'Example Learning · 2023', tags: ['Python'] }
+      ],
+      projects: [
+        { id: 'pr1', title: 'Expense Tracker API', meta: 'REST API with auth, budgets and monthly reports. Jan to Apr 2025.', tags: ['Python', 'FastAPI', 'PostgreSQL'] },
+        { id: 'pr2', title: 'Campus Events Board', meta: 'React web app where students post and follow events. 2024.', tags: ['React', 'Firebase'] },
+        { id: 'pr3', title: 'Sales Dashboard', meta: 'Charts and filters over a sample sales dataset. 2023.', tags: ['Python', 'Pandas', 'SQL'] }
+      ],
+      work: [{ id: 'wo1', title: 'Software Intern, Example Labs', meta: 'Jun to Aug 2024 · Wrote API endpoints and unit tests for an internal tool.', tags: ['Python', 'Testing'] }],
+      awards: [{ id: 'aw1', title: 'Hackathon runner-up', meta: 'Sample Institute of Technology · 2024', tags: [] }],
+      research: [{ id: 're1', title: 'A Small Study of Study Habits', meta: 'Student journal, 2025 · Co-author', tags: ['Survey'] }],
+      langs: [
+        { id: 'la1', title: 'English', meta: 'Fluent', tags: [] },
+        { id: 'la2', title: 'Hindi', meta: 'Native', tags: [] },
+        { id: 'la3', title: 'Marathi', meta: 'Conversational', tags: [] }
+      ]
+    };
+  }
+  renderVals() {
+    const s = this.state || {};
+    const cat = s.cat ?? 'projects';
+    const removed = s.removed ?? [];
+    const synced = s.synced ?? false;
+    const data = this.getData();
+    const CATS = [
+      { id: 'personal', name: 'Personal and contact' },
+      { id: 'summary', name: 'Summary' },
+      { id: 'education', name: 'Education' },
+      { id: 'skills', name: 'Skills' },
+      { id: 'certs', name: 'Certifications' },
+      { id: 'projects', name: 'Projects' },
+      { id: 'work', name: 'Experience' },
+      { id: 'awards', name: 'Achievements' },
+      { id: 'research', name: 'Publications' },
+      { id: 'langs', name: 'Languages' }
+    ];
+    const live = (id) => data[id].filter((i) => !removed.includes(i.id));
+    const cats = CATS.map((c) => ({
+      name: c.name,
+      count: live(c.id).length,
+      on: c.id === cat,
+      off: c.id !== cat,
+      pick: () => this.setState({ cat: c.id })
+    }));
+    const items = live(cat).map((i) => ({
+      title: i.title,
+      meta: i.meta,
+      tags: (i.tags || []).map((t) => ({ t })),
+      remove: () => this.setState({ removed: [...removed, i.id] })
+    }));
+    const total = CATS.reduce((n, c) => n + live(c.id).length, 0);
+    return {
+      cats,
+      items,
+      total,
+      empty: items.length === 0,
+      activeName: CATS.find((c) => c.id === cat).name,
+      activeCount: items.length,
+      sheetTabs: CATS.map((c) => ({ name: c.name, count: live(c.id).length })),
+      syncLabel: synced ? 'synced just now' : 'synced 2 min ago',
+      sync: () => this.setState({ synced: true })
+    };
+  }
+}
+</script>
+</body>
+</html>

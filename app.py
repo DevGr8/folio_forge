@@ -50,6 +50,15 @@ def on_startup():
         init_and_seed_db()
 
 
+
+@app.get("/", response_class=HTMLResponse)
+def serve_dashboard():
+    """Serves the interactive Portfolio Database & Dynamic Resume Generator UI at http://localhost:8000"""
+    index_path = os.path.join(os.path.dirname(__file__), "static", "index.html")
+    with open(index_path, "r", encoding="utf-8") as f:
+        return f.read()
+
+
 @app.get("/api/portfolio")
 def get_full_portfolio():
     """Returns all 10 categories of portfolio records and live Google Sheet metadata."""
