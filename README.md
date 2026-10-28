@@ -7,6 +7,11 @@ A centralized portfolio management system and dynamic ATS resume generator built
 - Contains 10 separate normalized tabs: `Personal_Info`, `Career_Summaries`, `Education`, `Skills`, `Certifications`, `Projects`, `Experience`, `Achievements`, `Publications_Activities`, and `Languages_Competencies`.
 
 ---
+## 🎬 Project Demo
+
+[![Watch Folio Forge Demo](screenshots/01_jd1_ai_ml_resume_studio.png)](Demonstration_Video_AI_Portfolio_Resume_Generator.mp4)
+
+**Watch the demo:** [Folio Forge — AI Portfolio & Resume Generator](Demonstration_Video_AI_Portfolio_Resume_Generator.mp4)
 
 ## System Architecture & Key Features
 
